@@ -13,6 +13,7 @@ fetch("/home/getCategories")        //pri učitavanju stranice zovem getCategori
     const prviLi = ul.getElementsByTagName("li")[0];        //na početku ručno pozovem prvu kategoriju
     if (prviLi) {
         generirajSlike(prviLi);
+        azurirajBrojUKosarici();
     }
 });
 
