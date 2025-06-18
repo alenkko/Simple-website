@@ -1,0 +1,65 @@
+[alt = "Logo"] {
+    display: inline;
+    width: 6vw;
+    min-width: 65px;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.trakaindex {
+    position: fixed;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 80%; 
+    max-width: 1200px; 
+    background-color: rgba(255, 240, 219, 1);
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+}
+
+#lijevo {
+    margin-right: auto;
+    display: inline;
+}
+
+.trakaindex #trenakt {
+    font-weight: bold;
+    font-size: clamp(11px, 1.6vw, 22px);
+    display: inline;
+}
+
+#desno {
+    margin-left: auto;
+}
+
+#desno img {
+    display: inline;
+    height: 3vw;
+    margin-top: 5px;
+    margin-bottom: 4px;
+    min-height: 35px;
+}
+
+#brojProizvoda {
+    border-radius: 10px;
+    background-color: rgb(240, 60, 92);
+    color: white;
+    padding: 3px;
+    position: absolute;
+    bottom: 10%;
+    right: 0.9%;
+    font-size: clamp(8px, 1.6vw, 10px);
+}
+
+#brojProizvoda:empty {
+    padding: 0;
+    background-color: transparent;
+}
+

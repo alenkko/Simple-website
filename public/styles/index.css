@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#poruka {
+    margin: 8vw auto;
+    margin-bottom: 0px;
+    display: flex;
+    width: 45vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 240, 219, 0.9);
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    padding: 2vw 5vw;
+    z-index: 1000;
+}
+
+#poruka h1 {
+    font-size: 3vw;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.8)),
+    url("../images/pozadina.jpg");    
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 0px;
+    
+}
+
+@media (max-width: 1024px) {
+    #poruka {
+        position: absolute;
+        top: 6%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #poruka h1 {
+        font-size: 3.5vw;
+    }
+}
