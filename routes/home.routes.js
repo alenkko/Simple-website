@@ -15,8 +15,8 @@ router.get('/home/getCategories', function(req, res) {      //dohvaćanje katego
     res.json(categories);
 });
 
-router.get('/home/getProducts/:id', function(req, res) {        //dohvaćanje proizvoda određene kategorije, radi ovako jer sam u mydata.js upisao id-jeve tako da se poklapaju s pozicijom u polju
-    const category = data.categories[parseInt(req.params.id)];
+router.get('/home/getProducts/:id', function(req, res) {        //dohvaćanje proizvoda određene kategorije, id kategorije mi je pozicija u polju, 
+    const category = data.categories[parseInt(req.params.id)];      //a id proizvoda sam manualno upisao u mydata.js radi jednostavnosti
 
     if (!category) {        //provjera ako kategorija s tim id-jem ne postoji
         return res.status(404).json({error: 'Kategorija nije pronađena.'});

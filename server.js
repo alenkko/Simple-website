@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));   
 
-app.use('/', homeRouter);       //za home sam stavio / jer sam u routes.js definirao redirect na /home ako dođe do njega
-app.use('/cart', cartRouter);
+app.use('/', homeRouter);       
+app.use('/', cartRouter);
 
 app.listen(3000);

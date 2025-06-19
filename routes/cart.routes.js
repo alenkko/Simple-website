@@ -11,11 +11,11 @@ function pronadiProizvod(id) {              //funkcija kojom u mydata.js pronađ
   return null;
 }
 
-router.get('/', function(req, res) {                //reneriranje stranice košarice
+router.get('/cart', function(req, res) {                //reneriranje stranice košarice
     res.render('cart');
 });
 
-router.post('/add/:id', function(req, res) {            //stavljanje proizvoda u košaricu
+router.post('/cart/add/:id', function(req, res) {            //stavljanje proizvoda u košaricu
     const id = req.params.id;
     const proizvod = pronadiProizvod(id);           //prvo prema id-u dobijem proizvod iz mydata.js
     if (!req.session.cart) req.session.cart = [];       //ako košarica ne postoji na serveru kreiram ju
@@ -43,7 +43,7 @@ router.post('/add/:id', function(req, res) {            //stavljanje proizvoda u
     res.status(200).end();
 });
 
-router.delete('/remove/:id', (req, res) => {              //uklanjanje proizvoda iz košarice
+router.delete('/cart/remove/:id', (req, res) => {              //uklanjanje proizvoda iz košarice
     const id = req.params.id;
     const proizvod = pronadiProizvod(id);
     if (!req.session.cart || req.session.cart.length === 0) return res.status(404).json({ error: 'Nema ničega u košarici za uklanjanje.' });     //ako košarica ne postoji ili je prazna nema ničega za ukloniti 
@@ -74,12 +74,12 @@ router.delete('/remove/:id', (req, res) => {              //uklanjanje proizvoda
     res.status(200).end();
 });
 
-router.delete('/clearAll', (req, res) => {          //napravljeno zbog tipke isprazni koja briše cijelu košaricu
+router.delete('/cart/clearAll', (req, res) => {          //napravljeno zbog tipke isprazni koja briše cijelu košaricu
     req.session.cart = [];
     res.status(200).end();
 });
 
-router.get('/getAll', (req, res) => {           //dohvaćanje košarice
+router.get('/cart/getAll', (req, res) => {           //dohvaćanje košarice
   res.json(req.session.cart || []);
 });
 

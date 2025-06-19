@@ -5,9 +5,9 @@ fetch("/home/getCategories")        //pri učitavanju stranice zovem getCategori
     kategorije.forEach((kategorija, index) => {
     const li = document.createElement("li");
     li.textContent = kategorija.name;
-    li.id = kategorija.id;
+    li.id = index;
     ul.appendChild(li);
-    li.addEventListener("click", () => generirajSlike(li, index));      //na svaki element stavim da se na klik pozove glavna funkcija
+    li.addEventListener("click", () => generirajSlike(li));      //na svaki element stavim da se na klik pozove glavna funkcija
     });
 
     const prviLi = ul.getElementsByTagName("li")[0];        //na početku ručno pozovem prvu kategoriju
